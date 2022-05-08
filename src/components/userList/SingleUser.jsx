@@ -5,6 +5,7 @@ import { UserContext } from '../../context/userContext';
 
 // Helpers
 import { isEdit } from '../../helpers/isEdit';
+import { deleteUser } from '../../helpers/deleteUser';
 
 const SingleUser = ({ id, username, description }) => {
   // General state
@@ -24,7 +25,7 @@ const SingleUser = ({ id, username, description }) => {
             Edit
             <i className='fa-solid fa-pen-to-square'></i>
           </button>
-          <button className='btn-delete'>
+          <button className='btn-delete' onClick={() => deleteUser(id, dispatch)}>
             Delete
             <i className='fa-solid fa-trash-can'></i>
           </button>
