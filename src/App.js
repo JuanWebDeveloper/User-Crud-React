@@ -1,13 +1,11 @@
+// Main container
+import Main from './containers/Main';
+
 // Styles of the application
 import './assets/sass/styles.scss';
 
 const App = () => {
-  return (
-    <div>
-      <h1>User Crud</h1>
-      <button>Create new user</button>
-    </div>
-  );
+  return <Main />;
 };
 
 export default App;

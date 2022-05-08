@@ -1,0 +1,180 @@
+.modal {
+  background-color: rgba($color: #222, $alpha: 0.8);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  pointer-events: none;
+  top: -100%;
+  width: 100%;
+  z-index: -10;
+
+  .modal-content {
+    background-color: #fafbfb;
+    border-radius: 5px;
+    left: 50%;
+    position: absolute;
+    padding: 1rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+
+    .modal-header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+
+      h3 {
+        color: #10c932;
+        letter-spacing: 2px;
+      }
+
+      .close {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        i {
+          color: #222;
+          font-size: 2rem;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          transform: scale(1.5);
+        }
+
+        &:hover i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .modal-body {
+      margin-top: 10px;
+      position: relative;
+      width: 100%;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input,
+        textarea {
+          background-color: transparent;
+          box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.5);
+          border: none;
+          border-radius: 5px;
+          border-bottom: 2px solid #222;
+          color: #222;
+          font-size: 1.2rem;
+          font-weight: 500;
+          margin-bottom: 20px;
+          padding: 10px;
+          width: 100%;
+          transition: all 0.3s ease;
+
+          &:focus,
+          &:hover {
+            box-shadow: inset 0px -4px 20px 0 #fafbfb, inset 0px 4px 20px 0 rgba(0, 0, 0, 0.4);
+            outline: none;
+          }
+        }
+
+        textarea {
+          min-height: 100px;
+          max-height: 250px;
+          min-width: 100%;
+          max-width: 100%;
+        }
+
+        button {
+          align-self: flex-end;
+          background-color: #10c932;
+          border: none;
+          border-radius: 5px;
+          color: #fafbfb;
+          cursor: pointer;
+          font-size: 1.5rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+          padding: 5px 20px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #23da44;
+          }
+        }
+      }
+    }
+  }
+}
+
+.show-modal {
+  animation: show-modal 0.6s forwards;
+}
+
+@keyframes show-modal {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+
+  25% {
+    opacity: 0.25;
+    top: -75%;
+  }
+
+  50% {
+    opacity: 0.5;
+    top: -50%;
+  }
+
+  75% {
+    opacity: 0.75;
+    top: -25%;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+    pointer-events: all;
+    z-index: 10;
+  }
+}
+
+.hide-modal {
+  animation: hide-modal 0.6s forwards;
+}
+
+@keyframes hide-modal {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+
+  25% {
+    opacity: 0.75;
+    top: -25%;
+  }
+
+  50% {
+    opacity: 0.5;
+    top: -50%;
+  }
+
+  75% {
+    opacity: 0.25;
+    top: -75%;
+  }
+
+  100% {
+    opacity: 0;
+    top: -100%;
+    pointer-events: none;
+    z-index: -10;
+  }
+}
