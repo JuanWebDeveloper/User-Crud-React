@@ -1,4 +1,15 @@
-const SingleUser = ({ username, description }) => {
+import { useContext } from 'react';
+
+// Context
+import { UserContext } from '../../context/userContext';
+
+// Helpers
+import { isEdit } from '../../helpers/isEdit';
+
+const SingleUser = ({ id, username, description }) => {
+  // General state
+  const { dispatch } = useContext(UserContext);
+
   return (
     <div className='single-user'>
       <div className='user-content'>
@@ -9,7 +20,7 @@ const SingleUser = ({ username, description }) => {
           <p>{description}</p>
         </div>
         <div className='actions'>
-          <button className='btn-edit'>
+          <button className='btn-edit' onClick={() => isEdit(id, username, description, dispatch)}>
             Edit
             <i className='fa-solid fa-pen-to-square'></i>
           </button>

@@ -5,6 +5,16 @@ export const useUserReducer = (state, action) => {
         ...state,
         users: [...state.users, action.payload],
       };
+    case 'isEdit':
+      return {
+        ...state,
+        isEdit: action.payload,
+      };
+    case 'cancelEdit':
+      return {
+        ...state,
+        isEdit: false,
+      };
     default:
       return state;
   }
