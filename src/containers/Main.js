@@ -15,13 +15,18 @@ import { UserContext } from '../context/userContext';
 import { init } from '../helpers/init';
 
 const Main = () => {
-  const [users, dispatch] = useReducer(useUserReducer, [], init);
+  const initialState = {
+    users: init(),
+    isEdit: false,
+  };
+
+  const [state, dispatch] = useReducer(useUserReducer, initialState);
 
   // Save users to LocalStorage
-  useEffect(() => localStorage.setItem('users', JSON.stringify(users)), [users]);
+  useEffect(() => localStorage.setItem('users', JSON.stringify(state.users)), [state.users]);
 
   return (
-    <UserContext.Provider value={{ users, dispatch }}>
+    <UserContext.Provider value={{ state, dispatch }}>
       <div className='main'>
         <div className='main-content'>
           <AddUsers>

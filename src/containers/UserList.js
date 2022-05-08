@@ -7,12 +7,12 @@ import SingleUser from '../components/userList/SingleUser';
 import { UserContext } from '../context/userContext';
 
 const UserList = () => {
-  const { users } = useContext(UserContext);
+  const { state } = useContext(UserContext);
 
   return (
     <div className='user-list'>
       <div className='list-content'>
-        {users.map((user) => (
+        {state.users.map((user) => (
           <SingleUser key={user.id} {...user} />
         ))}
       </div>
