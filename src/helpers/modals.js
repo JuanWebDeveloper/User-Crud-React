@@ -7,9 +7,10 @@ export const showModalCreateUser = () => {
 };
 
 // Function to hide the create user modal
-export const hideModalCreateUser = () => {
+export const hideModalCreateUser = (resetForm) => {
   let modal = document.querySelector('.modal');
 
   modal.classList.remove('show-modal');
   modal.classList.add('hide-modal');
+  resetForm();
 };
