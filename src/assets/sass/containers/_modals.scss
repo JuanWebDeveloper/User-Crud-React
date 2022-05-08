@@ -88,6 +88,10 @@
           max-height: 250px;
           min-width: 100%;
           max-width: 100%;
+
+          &::-webkit-scrollbar {
+            width: 0px;
+          }
         }
 
         button {

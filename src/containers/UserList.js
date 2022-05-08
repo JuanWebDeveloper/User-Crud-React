@@ -11,11 +11,17 @@ const UserList = () => {
 
   return (
     <div className='user-list'>
-      <div className='list-content'>
-        {state.users.map((user) => (
-          <SingleUser key={user.id} {...user} />
-        ))}
-      </div>
+      {state.users.length > 0 ? (
+        <div className='list-content'>
+          {state.users.map((user) => (
+            <SingleUser key={user.id} {...user} />
+          ))}
+        </div>
+      ) : (
+        <div className='no-users'>
+          <h2>No users found</h2>
+        </div>
+      )}
     </div>
   );
 };
