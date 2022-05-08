@@ -15,6 +15,16 @@ export const useUserReducer = (state, action) => {
         ...state,
         isEdit: false,
       };
+    case 'editUser':
+      return {
+        ...state,
+        users: state.users.map((user) => {
+          if (user.id === action.payload.id) {
+            return action.payload;
+          }
+          return user;
+        }),
+      };
     default:
       return state;
   }

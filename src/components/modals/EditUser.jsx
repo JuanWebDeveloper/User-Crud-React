@@ -8,6 +8,7 @@ import { UserContext } from '../../context/userContext';
 
 // Helpers
 import { hideModalEditUser, showModalEditUser } from '../../helpers/modals';
+import { editUser } from '../../helpers/editUser';
 
 export const EditUser = () => {
   // General state
@@ -35,7 +36,7 @@ export const EditUser = () => {
         </div>
 
         <div className='modal-body'>
-          <form>
+          <form onSubmit={(e) => editUser(e, isEdit.id, username, description, dispatch)}>
             <input type='text' name='username' placeholder='Username' value={username} onChange={handleInputChange} required autoComplete='off' />
             <textarea name='description' placeholder='User Description' value={description} onChange={handleInputChange} required></textarea>
             <button type='submit'>Update</button>
