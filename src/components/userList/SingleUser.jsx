@@ -1,15 +1,12 @@
-const SingleUser = () => {
+const SingleUser = ({ username, description }) => {
   return (
     <div className='single-user'>
       <div className='user-content'>
         <div className='username'>
-          <h3>Username</h3>
+          <h3>{username}</h3>
         </div>
         <div className='description'>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione impedit labore voluptatem officia vitae eligendi fuga dolore asperiores nemo,
-            magnam quidem illum necessitatibus similique nostrum sapiente ipsa consequuntur excepturi minus?
-          </p>
+          <p>{description}</p>
         </div>
         <div className='actions'>
           <button className='btn-edit'>
