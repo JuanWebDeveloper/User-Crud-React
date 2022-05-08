@@ -1,6 +1,7 @@
 // Containers
 import AddUsers from './AddUsers';
 import Modals from './Modals';
+import UserList from './UserList';
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
       <div className='main-content'>
         <AddUsers>
           <Modals />
+          <UserList />
         </AddUsers>
       </div>
     </div>
